@@ -1,0 +1,2 @@
+/* animations.css */
+.reveal{opacity:0;transform:translateY(36px);transition:.8s}.reveal.visible{opacity:1;transform:none}.service-card,.industry,.value-card,.testimonial-card,.btn{transition:transform .35s ease,box-shadow .35s ease}.service-card:hover,.industry:hover,.value-card:hover,.testimonial-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.12)}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
