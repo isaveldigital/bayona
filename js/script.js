@@ -437,6 +437,8 @@ if (processRoute && processProgress) {
 
 
 
+
+
 // HEADER
 const header = document.getElementById('header');
 
@@ -462,25 +464,6 @@ if (mobileMenu && menuToggle) {
     });
 
 }
-
-
-// FAQ
-document.querySelectorAll('.faq-item').forEach(item => {
-
-    item.querySelector('.faq-question')?.addEventListener('click', () => {
-
-        item.classList.toggle('active');
-
-        const ans = item.querySelector('.faq-answer');
-
-        ans.style.maxHeight =
-            item.classList.contains('active')
-                ? ans.scrollHeight + 'px'
-                : 0;
-
-    });
-
-});
 
 
 
