@@ -434,3 +434,169 @@ if (processRoute && processProgress) {
     );
 
 }
+
+
+
+// HEADER
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+
+// MENÚ MÓVIL
+const mobileMenu = document.getElementById('mobileMenu');
+const menuToggle = document.getElementById('menuToggle');
+
+if (mobileMenu && menuToggle) {
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    });
+
+}
+
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item => {
+
+    item.querySelector('.faq-question')?.addEventListener('click', () => {
+
+        item.classList.toggle('active');
+
+        const ans = item.querySelector('.faq-answer');
+
+        ans.style.maxHeight =
+            item.classList.contains('active')
+                ? ans.scrollHeight + 'px'
+                : 0;
+
+    });
+
+});
+
+
+
+
+/* =========================================================
+   FORMULARIO DE CONTACTO → WHATSAPP
+========================================================= */
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+
+    contactForm.addEventListener('submit', function(event) {
+
+        event.preventDefault();
+
+
+        /* ================================================
+           DATOS DEL FORMULARIO
+        ================================================ */
+
+        const nombre =
+            document.getElementById('contactNombre').value.trim();
+
+        const empresa =
+            document.getElementById('contactEmpresa').value.trim();
+
+        const correo =
+            document.getElementById('contactCorreo').value.trim();
+
+        const telefono =
+            document.getElementById('contactTelefono').value.trim();
+
+        const servicio =
+            document.getElementById('contactServicio').value;
+
+        const mensaje =
+            document.getElementById('contactMensaje').value.trim();
+
+
+        /* ================================================
+           VALIDACIÓN
+        ================================================ */
+
+        if (!nombre || !correo || !servicio) {
+
+            alert(
+                'Por favor completa tu nombre, correo electrónico y servicio de interés.'
+            );
+
+            return;
+        }
+
+
+        /* ================================================
+           CONSTRUIR MENSAJE
+        ================================================ */
+
+        let whatsappMessage =
+`Hola, soy ${nombre}.`;
+
+        if (empresa) {
+
+            whatsappMessage +=
+`\n\nEmpresa: ${empresa}`;
+
+        }
+
+        whatsappMessage +=
+`\nCorreo: ${correo}`;
+
+        if (telefono) {
+
+            whatsappMessage +=
+`\nTeléfono: ${telefono}`;
+
+        }
+
+        whatsappMessage +=
+`\n\nEstoy interesado(a) en: ${servicio}`;
+
+        if (mensaje) {
+
+            whatsappMessage +=
+`\n\nQuisiera contarles lo siguiente:\n${mensaje}`;
+
+        }
+
+        whatsappMessage +=
+`\n\nEnviado desde el sitio web de Bayona Cortes S.A.S.`;
+
+
+        /* ================================================
+           URL WHATSAPP
+        ================================================ */
+
+        const whatsappNumber = '573138084937';
+
+        const whatsappURL =
+            'https://wa.me/' +
+            whatsappNumber +
+            '?text=' +
+            encodeURIComponent(whatsappMessage);
+
+
+        /* ================================================
+           ABRIR WHATSAPP
+        ================================================ */
+
+        window.open(
+            whatsappURL,
+            '_blank',
+            'noopener,noreferrer'
+        );
+
+    });
+
+}
+
