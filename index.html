@@ -143,7 +143,7 @@
         aria-hidden="true"
     >
         <source
-            src="https://gimnasiolospirineos.com/bayona/assets/video/herointro.mp4"
+            src="assets/video/herointro.mp4"
             type="video/mp4"
         >
     </video>
@@ -2154,98 +2154,101 @@
                     </p>
 
 
-                    <form>
+                        <form id="contactForm">
+
+                            <div class="form-row">
+
+                                <input
+                                    type="text"
+                                    id="contactNombre"
+                                    name="nombre"
+                                    placeholder="Nombre completo"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                                <input
+                                    type="text"
+                                    id="contactEmpresa"
+                                    name="empresa"
+                                    placeholder="Empresa"
+                                    autocomplete="organization"
+                                >
+
+                            </div>
 
 
-                        <div class="form-row">
+                            <div class="form-row">
 
-                            <input
-                                type="text"
-                                name="nombre"
-                                placeholder="Nombre completo"
-                                autocomplete="name"
+                                <input
+                                    type="email"
+                                    id="contactCorreo"
+                                    name="correo"
+                                    placeholder="Correo electrónico"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <input
+                                    type="tel"
+                                    id="contactTelefono"
+                                    name="telefono"
+                                    placeholder="Teléfono"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+
+                            <select
+                                id="contactServicio"
+                                name="servicio"
+                                aria-label="Selecciona un servicio"
                                 required
                             >
 
+                                <option value="">
+                                    Selecciona un servicio
+                                </option>
 
-                            <input
-                                type="text"
-                                name="empresa"
-                                placeholder="Empresa"
-                                autocomplete="organization"
+                                <option value="Contable y Tributario">
+                                    Contable y Tributario
+                                </option>
+
+                                <option value="Revisoría Fiscal">
+                                    Revisoría Fiscal
+                                </option>
+
+                                <option value="Constitución de Empresas">
+                                    Constitución de Empresas
+                                </option>
+
+                                <option value="Outsourcing NIIF">
+                                    Outsourcing NIIF
+                                </option>
+
+                                <option value="Legal Empresarial">
+                                    Legal Empresarial
+                                </option>
+
+                            </select>
+
+
+                            <textarea
+                                id="contactMensaje"
+                                name="mensaje"
+                                placeholder="Cuéntanos brevemente cómo podemos ayudarte"
+                            ></textarea>
+
+
+                            <button
+                                class="btn btn-primary"
+                                type="submit"
                             >
+                                Enviar solicitud
+                            </button>
 
-                        </div>
-
-
-                        <div class="form-row">
-
-                            <input
-                                type="email"
-                                name="correo"
-                                placeholder="Correo electrónico"
-                                autocomplete="email"
-                                required
-                            >
-
-
-                            <input
-                                type="tel"
-                                name="telefono"
-                                placeholder="Teléfono"
-                                autocomplete="tel"
-                            >
-
-                        </div>
-
-
-                        <select
-                            name="servicio"
-                            aria-label="Selecciona un servicio"
-                        >
-
-                            <option value="">
-                                Selecciona un servicio
-                            </option>
-
-                            <option value="contable-tributario">
-                                Contable y Tributario
-                            </option>
-
-                            <option value="revisoria-fiscal">
-                                Revisoría Fiscal
-                            </option>
-
-                            <option value="constitucion-empresas">
-                                Constitución de Empresas
-                            </option>
-
-                            <option value="outsourcing-niif">
-                                Outsourcing NIIF
-                            </option>
-
-                            <option value="legal-empresarial">
-                                Legal Empresarial
-                            </option>
-
-                        </select>
-
-
-                        <textarea
-                            name="mensaje"
-                            placeholder="Cuéntanos brevemente cómo podemos ayudarte"
-                        ></textarea>
-
-
-                        <button
-                            class="btn btn-primary"
-                            type="submit"
-                        >
-                            Enviar solicitud
-                        </button>
-
-
-                    </form>
+                        </form>
 
                 </div>
 
